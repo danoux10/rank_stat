@@ -1,0 +1,33 @@
+@media screen and (min-width: 1280px) {
+  .btn-minus,.btn-plus{
+    width:3rem;
+    height:2rem;
+  }
+  #info-view {
+    margin-top: 15rem;
+    justify-content: space-around;
+    #role-content{
+      height: 20rem;
+      .role{
+        .role-icon{
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+        fieldset{
+          width: 15rem;
+          height: 10rem;
+          &::before{
+            width: 15.4rem;
+            height: 10.7rem;
+          }
+          span{
+            top: 3.5rem;
+          }
+        }
+      }
+    }
+    #confirm-popup{
+      top: 65%;
+    }
+  }
+}

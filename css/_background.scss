@@ -1,0 +1,42 @@
+$shadow-small : multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+#background-content{
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  @include background;
+  overflow: hidden;
+}
+
+#stars{
+  @include star(1px);
+  box-shadow: $shadow-small;
+  animation : animStar 50s linear infinite;
+  &:after{
+    @include secondStar(1px);
+    box-shadow: $shadow-small;
+  }
+}
+
+#stars2{
+  @include star(2px);
+  box-shadow: $shadows-medium;
+  animation : animStar 100s linear infinite;
+  &:after{
+    @include secondStar(2px);
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3{
+  @include star(3px);
+  box-shadow: $shadows-medium;
+  animation : animStar 150s linear infinite;
+  &:after{
+    @include secondStar(3px);
+    box-shadow: $shadows-medium;
+  }
+}

@@ -1,0 +1,444 @@
+//link response
+#response {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding: .4% 0;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transform: none;
+  height: 1rem;
+  transition: height ease .5s;
+  //sublink response with hidden class
+  &.hidden {
+    transition: height ease .5s;
+    height: 0rem;
+    transform: scale(0);
+  }
+
+  //sublink response with error class
+  &.error {
+    background: $error;
+  }
+
+  //sublink response with success class
+  &.success {
+    background: $success;
+  }
+
+  //sublink response-content
+  .response-content {
+    width: 25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    //anchor text response
+    #response-form {
+      font-weight: bolder;
+      font-size: x-large;
+    }
+
+    //anchor close response
+    #response-close {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+//link header
+#header-content {
+  position: absolute;
+  height: 10rem;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 .5rem;
+  transition: height ease .5s;
+
+  &.hidden {
+    height: 0;
+    width: 0;
+    transform: scale(0);
+  }
+
+  .title-content {
+    h1 {
+      @include shining;
+    }
+
+    .underline {
+      background: red;
+      border-radius: 10px;
+      height: .3rem;
+      width: 100%;
+      display: block;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-image: linear-gradient(var(--rotate), $login 43%, $register);
+        animation: spin 2.5s linear infinite;
+      }
+    }
+  }
+
+  .show-form {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+//link form home
+.form-home {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50vh;
+  left: 50vw;
+  width: 23rem;
+  height: 11rem;
+  transition: height, width ease .5s;
+
+  &.hidden {
+    transition: height, width ease .5s;
+    transform: scale(0);
+    height: 0;
+    width: 0;
+  }
+
+  fieldset {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: .5rem 0;
+    @include shadow($light);
+
+    .btn-close {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: .1rem;
+      right: .1rem;
+      transform: translate(-50%, -50%);
+    }
+
+    legend {
+      text-align: center;
+      border: 1px solid $light;
+      border-radius: 20px;
+      padding: .5rem;
+      @include shadow($light);
+    }
+
+    .form-content {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      input[type='text'] {
+        border-bottom: 1px solid $light;
+      }
+    }
+  }
+}
+
+//link info
+#info {
+  position: absolute;
+  width: 99%;
+  transform:none;
+  transition:scale ease .5s;
+  z-index:1;
+  &.hidden{
+    width:0;
+    height:0;
+    transform: scale(0);
+  }
+  //sublink deconnexion
+  #deconnexion {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    transform: translate(-50%, -50%);
+
+    button {
+      width: 2rem;
+    }
+  }
+
+  //sublink info view
+  #info-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30rem;
+    transform: none;
+    transition: all ease .5s;
+
+    &.hidden {
+      width: 0;
+      height: 0;
+      transform: scale(0);
+    }
+
+    //anchor title info
+    h1 {
+      #username {
+        text-transform: uppercase;
+      }
+    }
+
+    //anchor role content
+    #role-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 99%;
+      //subanchor role
+      .role {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        //anchorlink role icon
+        .role-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+          border: 2px solid;
+          border-radius: 50px;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+
+          &.tank {
+            @include borderTL($tankLight);
+            @include borderBR($tankDark);
+
+            svg {
+              fill: $tankLight;
+            }
+          }
+
+          &.dps {
+            @include borderTL($dpsLight);
+            @include borderBR($dpsDark);
+
+            svg {
+              fill: $dpsLight;
+            }
+          }
+
+          &.heal {
+            @include borderTL($healLight);
+            @include borderBR($healDark);
+
+            svg {
+              fill: $healLight;
+            }
+          }
+        }
+
+        //anchorlink fieldset
+        fieldset {
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-around;
+          position: relative;
+          background: $dark;
+          &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -.3rem;
+            border-radius: 10px;
+            animation: spin 2.5s linear infinite;
+          }
+
+          &.tank {
+            color: $tankLight;
+
+            .btn-minus {
+              background: $tankDark;
+              @include shadow($tankDark);
+
+              &:hover {
+                color: $tankDark;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $tankDark;
+                }
+              }
+            }
+
+            .btn-plus {
+              background: $tankLight;
+              @include shadow($tankLight);
+
+              &:hover {
+                color: $tankLight;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $tankLight;
+                }
+              }
+            }
+
+            &:before {
+              background-image: linear-gradient(var(--rotate), $tankLight 43%, $tankDark);
+            }
+          }
+
+          &.dps {
+            color: $dpsLight;
+
+            .btn-minus {
+              background: $dpsDark;
+              @include shadow($dpsDark);
+
+              &:hover {
+                color: $dpsDark;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $dpsDark;
+                }
+              }
+            }
+
+            .btn-plus {
+              background: $dpsLight;
+              @include shadow($dpsLight);
+
+              &:hover {
+                color: $dpsLight;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $dpsLight;
+                }
+              }
+            }
+
+            &:before {
+              background-image: linear-gradient(var(--rotate), $dpsLight 43%, $dpsDark);
+            }
+          }
+
+          &.heal {
+            color: $healLight;
+
+            .btn-minus {
+              background: $healDark;
+              @include shadow($healDark);
+
+              &:hover {
+                color: $healLight;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $healDark;
+                }
+              }
+            }
+
+            .btn-plus {
+              background: $healLight;
+              @include shadow($healLight);
+
+              &:hover {
+                color: $healDark;
+                border: none;
+                background: none;
+
+                svg {
+                  fill: $healDark;
+                }
+              }
+            }
+
+            &:before {
+              background-image: linear-gradient(var(--rotate), $healLight 43%, $healDark);
+            }
+          }
+
+          span {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+
+            h3 {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    //anchor confirm popup
+    #confirm-popup {
+      position: absolute;
+      border-radius: 10px;
+      @include background;
+      border: 1px solid;
+      padding: .5rem;
+      height: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      transform: none;
+      transition: scale ease .5s;
+
+      &.hidden {
+        height: 0;
+        width: 0;
+        transform: scale(0);
+      }
+
+      //subanchor btn content popup
+      .btn-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+
+  #info-hidden {
+    display: none;
+  }
+}

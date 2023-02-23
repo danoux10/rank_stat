@@ -1,0 +1,41 @@
+<!--link form login & register-->
+<!--sublink login-->
+<form action="controller/function/login&register.php?task=login" class="form-home" id="login" method="post">
+	<fieldset>
+		<legend>Connexion</legend>
+		<!--anchor close login-->
+		<div class="btn btn-close" id="login-close">
+			<svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+				<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+				<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+			</svg>
+		</div>
+		<!--anchor login form content-->
+		<span class="form-content">
+				<label for="login-pseudo">Pseudo :</label>
+				<input id="login-pseudo" name="data-login" placeholder="Pseudo" type="text" autocomplete="off" required>
+			</span>
+		<p class="message">Attention pseudo sensible aux Majuscules</p>
+		<button class="btn btn-valid" type="submit">Se Connecter</button>
+	</fieldset>
+</form>
+<!--sublink register-->
+<form action="controller/function/login&register.php?task=register" class="form-home" id="register" method="post">
+	<fieldset>
+		<legend>Inscription</legend>
+		<!--anchor close register-->
+		<div class="btn btn-close" id="register-close">
+			<svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+				<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+				<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+			</svg>
+		</div>
+		<!--anchor register form content-->
+		<span class="form-content">
+				<label for="register-pseudo">Pseudo :</label>
+				<input id="register-pseudo" name="data-register" placeholder="Pseudo" type="text" autocomplete="off" required>
+			</span>
+		<p class="message">Attention pseudo sensible aux Majuscules</p>
+		<button class="btn btn-valid" type="submit">S'inscrire</button>
+	</fieldset>
+</form>

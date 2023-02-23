@@ -1,0 +1,136 @@
+//link all btn
+.btn{
+  cursor: pointer;
+  transition:all ease .5s;
+}
+//link close btn
+.btn-close,.btn-logout{
+  svg{
+    fill: $light;
+  }
+}
+//link btn exepted close
+.btn:not(.btn-close,.btn-logout){
+  color:$dark;
+  padding: .2rem;
+  border-radius: 10px;
+  font-size:large;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-color: $dark;
+  &:hover{
+    @include shadow($medium);
+    border: 1px solid $light;
+    background: none;
+  }
+  p{
+    font-weight: bolder;
+  }
+}
+
+.btn-login{
+  background: $login;
+  @include shadow($login);
+  &:hover{
+    color: $login;
+  }
+}
+
+.btn-register{
+  background: $register;
+  @include shadow($register);
+  &:hover{
+    color: $register;
+  }
+}
+
+.btn-valid{
+  background: $valid;
+  @include shadow($valid);
+  &:hover{
+    color: $valid;
+  }
+}
+
+.btn-minus,.btn-plus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg{
+    width:50%;
+  }
+}
+
+.btn-reset{
+  padding:1rem;
+  background: $reset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width:8rem;
+  &:hover{
+    color:$resetHover;
+    svg{
+      fill:$resetHover;
+    }
+  }
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:1.5rem;
+    svg{
+      fill:$dark;
+    }
+  }
+  h4{
+    font-weight:bold;
+  }
+}
+
+.btn-valid-reset,.btn-cancel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width:3rem;
+  h5{
+    font-weight: bold;
+  }
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.btn-valid-reset{
+  span{
+    svg{
+      width: 1rem;
+    }
+  }
+  &:hover {
+    svg{
+      fill: $valid;
+    }
+  }
+}
+
+.btn-cancel{
+  background: $cancel;
+  @include shadow($cancel);
+  span{
+    svg{
+      width: .7rem;
+    }
+  }
+  &:hover {
+    color: $cancel;
+    svg{
+      fill: $cancel;
+    }
+  }
+}
