@@ -9,7 +9,7 @@ function showLogin() {
     loginForm.classList.remove('hidden');
   }
 }
-function closeLogin() {
+function clooseLogin() {
   if (!loginForm.classList.contains('hidden')) {
     loginForm.classList.add('hidden');
   }
@@ -20,7 +20,7 @@ function showRegister() {
     registerForm.classList.remove('hidden');
   }
 }
-function closeRegister() {
+function clooseRegister() {
   if (!registerForm.classList.contains('hidden')) {
     registerForm.classList.add('hidden');
   }
@@ -31,7 +31,7 @@ function showResponse(){
     responseContent.classList.remove('hidden');
   }
 }
-function closeResponse() {
+function clooseResponse() {
   if (!responseContent.classList.contains('hidden')) {
     responseContent.classList.add('hidden');
   }
@@ -42,20 +42,20 @@ function showPopup(){
     resetPopup.classList.remove('hidden');
   }
 }
-function closePopup(){
+function cloosePopup(){
   if(!resetPopup.classList.contains('hidden')){
     resetPopup.classList.add('hidden');
   }
 }
 
 showLoginBtn.addEventListener('click',showLogin);
-closeLoginBtn.addEventListener('click',closeLogin);
+clooseLoginBtn.addEventListener('click',clooseLogin);
 
 showRegisterBtn.addEventListener('click',showRegister);
-closeRegisterBtn.addEventListener('click',closeRegister);
+clooseRegisterBtn.addEventListener('click',clooseRegister);
 
-closeResponseBtn.addEventListener('click',closeResponse);
+clooseResponseBtn.addEventListener('click',clooseResponse);
 
 resetBtn.addEventListener('click',showPopup);
-cancelBtn.addEventListener('click',closePopup);
-validReset.addEventListener('click',closePopup);
+cancelBtn.addEventListener('click',cloosePopup);
+validReset.addEventListener('click',cloosePopup);

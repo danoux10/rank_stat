@@ -9,6 +9,6 @@ include_once 'view/header.html';
 
 include_once 'view/login&register.html';
 
-include_once 'view/information.html';
+include_once 'view/info.html';
 
 include_once 'controller/footer.html';

@@ -31,3 +31,111 @@
     transform: translateY(-2000px);
   }
 }
+
+@keyframes shadeFillWin {
+  16.666% {
+    fill: $tankDark;
+  }
+
+  33.333% {
+    fill: $dpsLight
+  }
+
+  50% {
+    fill: $dpsDark;
+  }
+
+  66.666% {
+    fill: $healLight
+  }
+
+  93.333% {
+    fill: $healDark;
+  }
+}
+
+@keyframes shadeFillLoose {
+  16.666% {
+    fill: $dpsDark;
+  }
+
+  33.333% {
+    fill: $healLight
+  }
+
+  50% {
+    fill: $healDark;
+  }
+
+  66.666% {
+    fill: $tankLight
+  }
+
+  93.333% {
+    fill: $tankDark;
+  }
+}
+
+@keyframes spinWin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes borderFillWin {
+  0%{
+    border-top-color:$tankLight;
+    border-left-color:$tankLight;
+    border-right-color:$tankDark;
+    border-bottom-color:$tankDark;
+  }
+
+  50% {
+    border-top-color: $dpsLight;
+    border-left-color: $dpsLight;
+    border-right-color: $dpsDark;
+    border-bottom-color: $dpsDark;
+  }
+
+  100% {
+    border-top-color: $healLight;
+    border-left-color: $healLight;
+    border-right-color: $healDark;
+    border-bottom-color: $healDark;
+  }
+}
+
+@keyframes spinLoose {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes borderFillLoose {
+  0%{
+    border-top-color:$dpsLight;
+    border-left-color:$dpsLight;
+    border-right-color:$dpsDark;
+    border-bottom-color:$dpsDark;
+  }
+
+  50% {
+    border-top-color: $healLight;
+    border-left-color: $healLight;
+    border-right-color: $healDark;
+    border-bottom-color: $healDark;
+  }
+
+  99% {
+    border-top-color: $tankLight;
+    border-left-color: $tankLight;
+    border-right-color: $tankDark;
+    border-bottom-color: $tankDark;
+  }
+}

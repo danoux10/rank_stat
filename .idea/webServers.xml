@@ -2,22 +2,15 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="7182a07a-5eb0-47f6-ba85-537b009a871a" name="hebdowinPi" url="/">
-        <fileTransfer rootFolder="/HebdowinV2" host="192.168.1.39" port="21">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-        </fileTransfer>
-      </webServer>
-      <webServer id="681c172b-f278-4418-be02-6eef7b587bbc" name="Pi" url="">
-        <fileTransfer host="192.168.1.39" port="21">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-        </fileTransfer>
-      </webServer>
       <webServer id="14a48bb2-1271-46c4-899d-4d7194fdeded" name="nas" url="http://109.17.151.168">
         <fileTransfer rootFolder="/web/hebdoWin" host="109.17.151.168" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="7aba8f2e-ffd2-47f6-9105-9e63c792aa70" name="pi" url="http://192.168.1.39">
+        <fileTransfer rootFolder="/rank_stat" host="192.168.1.39" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -3,14 +3,14 @@
   cursor: pointer;
   transition:all ease .5s;
 }
-//link close btn
-.btn-close,.btn-logout{
+//link cloose btn
+.btn-cloose,.btn-logout{
   svg{
     fill: $light;
   }
 }
-//link btn exepted close
-.btn:not(.btn-close,.btn-logout){
+//link btn exepted cloose
+.btn:not(.btn-cloose,.btn-logout){
   color:$dark;
   padding: .2rem;
   border-radius: 10px;
