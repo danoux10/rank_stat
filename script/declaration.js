@@ -56,9 +56,9 @@ const healLooseData = document.getElementsByName('looseHeal');
 //link set btn
 const showLoginBtn = document.getElementById('login-btn');
 const showRegisterBtn = document.getElementById('register-btn');
-const clooseLoginBtn = document.getElementById('login-cloose');
-const clooseRegisterBtn = document.getElementById('register-cloose');
-const clooseResponseBtn = document.getElementById('response-cloose');
+const closeLoginBtn = document.getElementById('login-close');
+const closeRegisterBtn = document.getElementById('register-close');
+const closeResponseBtn = document.getElementById('response-close');
 const resetBtn = document.getElementById('reset-btn');
 const cancelBtn = document.getElementById('cancel-reset');
 const validReset = document.getElementById('valid-reset');

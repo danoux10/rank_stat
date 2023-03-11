@@ -4,48 +4,51 @@
     height:2rem;
   }
   #info{
-    .role-content{
-      height: 70%;
-      .view-content{
-        //height: 35%;
-        .view-cat{
-          top:11rem;
-          .circle{
-            width: 4.5rem;
-            height: 4.5rem;
-          }
-          svg{
-            width: 3rem;
-          }
-          &.left-view{
-            left: 5rem;
-          }
-          &.right-view{
-            right: 0;
-          }
-        }
-        &#win-content{
-          svg{
-            top: 15%;
-          }
-        }
-        &#loose-content{
-          top: 25%;
-        }
-        .role{
-          .role-icon{
-            width: 1.5rem;
-            height: 1.5rem;
-          }
-          fieldset{
-            width: 15rem;
-            height: 10rem;
-            &::before{
-              width: 15.4rem;
-              height: 10.7rem;
+    #view{
+      height: 95%;
+      .role-content{
+        .view-content{
+          height:25vh;
+          .view-cat{
+            top: 15vh;
+            .circle{
+              width: 4.5rem;
+              height: 4.5rem;
             }
-            span{
-              top: 3.5rem;
+            svg{
+              width: 3rem;
+            }
+            &.left-view{
+              left: 5rem;
+            }
+            &.right-view{
+              right: 0;
+            }
+          }
+          &#win-content{
+            svg{
+              top: 15%;
+            }
+          }
+          &#loose-content{
+            top: 25%;
+          }
+          .role{
+            height: 100%;
+            .role-icon{
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+            fieldset{
+              width: 15rem;
+              height: 10rem;
+              &::before{
+                width: 15.4rem;
+                height: 10.7rem;
+              }
+              span{
+                top: 3.5rem;
+              }
             }
           }
         }

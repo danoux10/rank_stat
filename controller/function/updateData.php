@@ -2,7 +2,7 @@
 include_once '../../config/database.php';
 
 $nWin = 4;
-$nLoose = 14;
+$nLose = 14;
 
 if(array_key_exists('task',$_GET)){
 	$task = $_GET['task'];
@@ -81,17 +81,17 @@ function winTankDec(){
 	$update->execute([$tankWin,$_COOKIE['idUser']]);
 }
 function winTankInc(){
-	global $bdd,$nWin,$nLoose;
+	global $bdd,$nWin,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
 		$tankWin = $data['tankWin'];
-		$tankLoose = $data['tankLoose'];
+		$tankLose = $data['tankLose'];
 	}
 	if ($tankWin == $nWin){
 		$tankWin = 0;
-		$tankLoose = 0;
-		$update = $bdd->prepare('UPDATE player set tankWin=?,tankLoose=? WHERE idUser=?');
-		$update->execute([$tankWin,$tankLoose,$_COOKIE['idUser']]);
+		$tankLose = 0;
+		$update = $bdd->prepare('UPDATE player set tankWin=?,tankLose=? WHERE idUser=?');
+		$update->execute([$tankWin,$tankLose,$_COOKIE['idUser']]);
 	}else{
 		$tankWin++;
 		$update = $bdd->prepare('UPDATE player set tankWin=? WHERE idUser=?');
@@ -103,34 +103,34 @@ function looseTankDec(){
 	global $bdd;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$tankLoose = $data['tankLoose'];
+		$tankLose = $data['tankLose'];
 	}
-	if ($tankLoose == 0){
-		$tankLoose = 0;
+	if ($tankLose == 0){
+		$tankLose = 0;
 	}else{
-		$tankLoose--;
+		$tankLose--;
 	}
 	
-	$update = $bdd->prepare('UPDATE player set tankLoose=? WHERE idUser=?');
+	$update = $bdd->prepare('UPDATE player set tankLose=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$tankLoose,$_COOKIE['idUser']]);
+	$update->execute([$tankLose,$_COOKIE['idUser']]);
 }
 function looseTankInc(){
-	global $bdd,$nLoose,$nLoose;
+	global $bdd,$nLose,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$tankLoose = $data['tankLoose'];
+		$tankLose = $data['tankLose'];
 		$tankWin = $data['tankWin'];
 	}
-	if ($tankLoose == $nLoose){
-		$tankLoose = 0;
+	if ($tankLose == $nLose){
+		$tankLose = 0;
 		$tankWin = 0;
-		$update = $bdd->prepare('UPDATE player set tankLoose=?,tankLoose=? WHERE idUser=?');
-		$update->execute([$tankWin,$tankLoose,$_COOKIE['idUser']]);
+		$update = $bdd->prepare('UPDATE player set tankLose=?,tankLose=? WHERE idUser=?');
+		$update->execute([$tankWin,$tankLose,$_COOKIE['idUser']]);
 	}else{
-		$tankLoose++;
-		$update = $bdd->prepare('UPDATE player set tankLoose=? WHERE idUser=?');
-		$update->execute([$tankLoose,$_COOKIE['idUser']]);
+		$tankLose++;
+		$update = $bdd->prepare('UPDATE player set tankLose=? WHERE idUser=?');
+		$update->execute([$tankLose,$_COOKIE['idUser']]);
 	}
 }
 
@@ -153,17 +153,17 @@ function winDpsDec(){
 	$update->execute([$dpsWin,$_COOKIE['idUser']]);
 }
 function winDpsInc(){
-	global $bdd,$nWin,$nLoose;
+	global $bdd,$nWin,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
 		$dpsWin = $data['dpsWin'];
-		$dpsLoose = $data['dpsLoose'];
+		$dpsLose = $data['dpsLose'];
 	}
 	if ($dpsWin == $nWin){
 		$dpsWin = 0;
-		$dpsLoose = 0;
-		$update = $bdd->prepare('UPDATE player set dpsWin=?,dpsLoose=? WHERE idUser=?');
-		$update->execute([$dpsWin,$dpsLoose,$_COOKIE['idUser']]);
+		$dpsLose = 0;
+		$update = $bdd->prepare('UPDATE player set dpsWin=?,dpsLose=? WHERE idUser=?');
+		$update->execute([$dpsWin,$dpsLose,$_COOKIE['idUser']]);
 	}else{
 		$dpsWin++;
 		$update = $bdd->prepare('UPDATE player set dpsWin=? WHERE idUser=?');
@@ -175,34 +175,34 @@ function looseDpsDec(){
 	global $bdd;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$dpsLoose = $data['dpsLoose'];
+		$dpsLose = $data['dpsLose'];
 	}
-	if ($dpsLoose == 0){
-		$dpsLoose = 0;
+	if ($dpsLose == 0){
+		$dpsLose = 0;
 	}else{
-		$dpsLoose--;
+		$dpsLose--;
 	}
 	
-	$update = $bdd->prepare('UPDATE player set dpsLoose=? WHERE idUser=?');
+	$update = $bdd->prepare('UPDATE player set dpsLose=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$dpsLoose,$_COOKIE['idUser']]);
+	$update->execute([$dpsLose,$_COOKIE['idUser']]);
 }
 function looseDpsInc(){
-	global $bdd,$nLoose,$nLoose;
+	global $bdd,$nLose,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$dpsLoose = $data['dpsLoose'];
+		$dpsLose = $data['dpsLose'];
 		$dpsWin = $data['dpsWin'];
 	}
-	if ($dpsLoose == $nLoose){
-		$dpsLoose = 0;
+	if ($dpsLose == $nLose){
+		$dpsLose = 0;
 		$dpsWin = 0;
-		$update = $bdd->prepare('UPDATE player set dpsLoose=?,dpsLoose=? WHERE idUser=?');
-		$update->execute([$dpsWin,$dpsLoose,$_COOKIE['idUser']]);
+		$update = $bdd->prepare('UPDATE player set dpsLose=?,dpsLose=? WHERE idUser=?');
+		$update->execute([$dpsWin,$dpsLose,$_COOKIE['idUser']]);
 	}else{
-		$dpsLoose++;
-		$update = $bdd->prepare('UPDATE player set dpsLoose=? WHERE idUser=?');
-		$update->execute([$dpsLoose,$_COOKIE['idUser']]);
+		$dpsLose++;
+		$update = $bdd->prepare('UPDATE player set dpsLose=? WHERE idUser=?');
+		$update->execute([$dpsLose,$_COOKIE['idUser']]);
 	}
 }
 //sublink heal
@@ -224,17 +224,17 @@ function winHealDec(){
 	$update->execute([$healWin,$_COOKIE['idUser']]);
 }
 function winHealInc(){
-	global $bdd,$nWin,$nLoose;
+	global $bdd,$nWin,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
 		$healWin = $data['healWin'];
-		$healLoose = $data['healLoose'];
+		$healLose = $data['healLose'];
 	}
 	if ($healWin == $nWin){
 		$healWin = 0;
-		$healLoose = 0;
-		$update = $bdd->prepare('UPDATE player set healWin=?,healLoose=? WHERE idUser=?');
-		$update->execute([$healWin,$healLoose,$_COOKIE['idUser']]);
+		$healLose = 0;
+		$update = $bdd->prepare('UPDATE player set healWin=?,healLose=? WHERE idUser=?');
+		$update->execute([$healWin,$healLose,$_COOKIE['idUser']]);
 	}else{
 		$healWin++;
 		$update = $bdd->prepare('UPDATE player set healWin=? WHERE idUser=?');
@@ -246,41 +246,41 @@ function looseHealDec(){
 	global $bdd;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$healLoose = $data['healLoose'];
+		$healLose = $data['healLose'];
 	}
-	if ($healLoose == 0){
-		$healLoose = 0;
+	if ($healLose == 0){
+		$healLose = 0;
 	}else{
-		$healLoose--;
+		$healLose--;
 	}
 	
-	$update = $bdd->prepare('UPDATE player set healLoose=? WHERE idUser=?');
+	$update = $bdd->prepare('UPDATE player set healLose=? WHERE idUser=?');
 	//Update change value by cookie
-	$update->execute([$healLoose,$_COOKIE['idUser']]);
+	$update->execute([$healLose,$_COOKIE['idUser']]);
 }
 function looseHealInc(){
-	global $bdd,$nLoose,$nLoose;
+	global $bdd,$nLose,$nLose;
 	$select = $bdd->query('select * from player');
 	foreach ($select as $data){
-		$healLoose = $data['healLoose'];
+		$healLose = $data['healLose'];
 		$healWin = $data['healWin'];
 	}
-	if ($healLoose == $nLoose){
-		$healLoose = 0;
+	if ($healLose == $nLose){
+		$healLose = 0;
 		$healWin = 0;
-		$update = $bdd->prepare('UPDATE player set healLoose=?,healLoose=? WHERE idUser=?');
-		$update->execute([$healWin,$healLoose,$_COOKIE['idUser']]);
+		$update = $bdd->prepare('UPDATE player set healLose=?,healLose=? WHERE idUser=?');
+		$update->execute([$healWin,$healLose,$_COOKIE['idUser']]);
 	}else{
-		$healLoose++;
-		$update = $bdd->prepare('UPDATE player set healLoose=? WHERE idUser=?');
-		$update->execute([$healLoose,$_COOKIE['idUser']]);
+		$healLose++;
+		$update = $bdd->prepare('UPDATE player set healLose=? WHERE idUser=?');
+		$update->execute([$healLose,$_COOKIE['idUser']]);
 	}
 }
 //sublink reset
 function resetAll(){
 	global $bdd;
 	$reset = 0;
-	$update = $bdd->prepare('UPDATE player set tankWin=?,dpsWin=?,healWin=?,tankLoose=?,dpsLoose=?,healLoose=? WHERE idUser=?');
+	$update = $bdd->prepare('UPDATE player set tankWin=?,dpsWin=?,healWin=?,tankLose=?,dpsLose=?,healLose=? WHERE idUser=?');
 	//Update change value by cookie
 	$update->execute([$reset,$reset,$reset,$reset,$reset,$reset,$_COOKIE['idUser']]);
 }

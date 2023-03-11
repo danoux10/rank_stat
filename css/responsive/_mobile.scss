@@ -8,50 +8,54 @@
     height: 2rem;
   }
   #info {
-    .role-content {
-      height: 65%;
-      .view-content {
-        height: 50%;
-
-        .view-cat {
-          top: 15%;
-          left: 50%;
-          .circle{
-            width: 4rem;
-            height: 4rem;
+    #view{
+      height: 80%;
+      .role-content {
+        .view-content {
+          height:30vh;
+          .view-cat {
+            top: 15%;
+            left: 50%;
+            .circle{
+              width: 4rem;
+              height: 4rem;
+            }
+            svg {
+              width: 3rem;
+            }
           }
-          svg {
-            width: 3rem;
-          }
-        }
-
-        .role {
-          height: 16rem;
-
-          .role-icon {
-            width: 1.5rem;
-            height: 1.5rem;
+          .right-view{
+            display: none;
           }
 
-          fieldset {
-            width: 15rem;
-            height: 10rem;
+          .role {
+            height: 16rem;
 
-            &::before {
-              width: 15.4rem;
-              height: 10.7rem;
+            .role-icon {
+              width: 1.5rem;
+              height: 1.5rem;
             }
 
-            span {
-              top: 3.5rem;
+            fieldset {
+              width: 15rem;
+              height: 10rem;
+
+              &::before {
+                width: 15.4rem;
+                height: 10.7rem;
+              }
+
+              span {
+                top: 3.5rem;
+              }
             }
           }
         }
       }
-    }
-    .btn-reset{
-      width:9rem;
-      height:2rem;
+      .btn-reset{
+        width:9rem;
+        height:2rem;
+      }
     }
     #confirm-popup {
       top: 30%;
@@ -59,35 +63,35 @@
   }
 }
 
-@media screen and (min-width: 378px) and (orientation: landscape) {
-  .btn-minus, .btn-plus {
-    width: 2rem;
-    height: 1.5rem;
-  }
-  #info {
-    .role-content {
-      .view-content {
-        .role {
-          .role-icon {
-            width: 1rem;
-            height: 1rem;
-          }
-
-          fieldset {
-            width: 15rem;
-            height: 8rem;
-
-            &::before {
-              width: 15.4rem;
-              height: 8.8rem;
-            }
-
-            span {
-              top: 3rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//@media screen and (min-width: 378px) and (orientation: landscape) {
+//  .btn-minus, .btn-plus {
+//    width: 2rem;
+//    height: 1.5rem;
+//  }
+//  #info {
+//    .role-content {
+//      .view-content {
+//        .role {
+//          .role-icon {
+//            width: 1rem;
+//            height: 1rem;
+//          }
+//
+//          fieldset {
+//            width: 15rem;
+//            height: 8rem;
+//
+//            &::before {
+//              width: 15.4rem;
+//              height: 8.8rem;
+//            }
+//
+//            span {
+//              top: 3rem;
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}

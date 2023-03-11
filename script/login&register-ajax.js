@@ -22,7 +22,7 @@ function registerAjax(event) {
         responseContent.classList.remove('error');
         responseForm.innerHTML = 'Pseudo Ajouter avec success';
         registerInput.value = '';
-        clooseRegister();
+        closeRegister();
       }
     } else if (xhr.readyState == 4) {
       alert('error register');
@@ -58,7 +58,7 @@ function loginAjax(event) {
         loginInput.value = '';
         loginForm.classList.add('hidden');
         info.classList.remove('hidden');
-        clooseResponse();
+        closeResponse();
       }
     } else if (xhr.readyState == 4) {
       alert('error login');

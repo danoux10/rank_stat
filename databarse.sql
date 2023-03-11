@@ -1,14 +1,14 @@
-create DATABASE hebdowin;
-use hebdowin;
+create DATABASE RankStat;
+use RankStat;
 
 create table player
 (
     idUser int(11) auto_increment primary key not null,
     pseudo varchar(255) not null,
-    tankData   int(11) not null,
-    dpsData    int(11) not null,
-    healData int(11) not null
+    tankWin   int(11) not null default 0,
+    dpsWin    int(11) not null default 0,
+    healWin int(11) not null default 0,
+    tankLose   int(11) not null default 0,
+    dpsLose    int(11) not null default 0,
+    healLose int(11) not null default 0
 )
-
-use hebdowin;
-drop table player;

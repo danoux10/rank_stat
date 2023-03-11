@@ -27,8 +27,8 @@ function register(){
 		$verifRegister = $data['pseudo'];
 	}
 	if($verifRegister == null){
-		$addPseudo = $bdd->prepare('INSERT INTO player set pseudo=?,tankData=?,dpsData=?,healData=?');
-		$addPseudo->execute([$pseudoRegister,0,0,0]);
+		$addPseudo = $bdd->prepare('INSERT INTO player set pseudo=?');
+		$addPseudo->execute([$pseudoRegister]);
 		$success = 1;
 	}else{
 		$success = 0;

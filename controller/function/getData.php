@@ -9,9 +9,9 @@ foreach ($allData as $data) {
 	$tankWin = $data['tankWin'];
 	$dpsWin = $data['dpsWin'];
 	$healWin = $data['healWin'];
-	$tankLoose = $data['tankLoose'];
-	$dpsLoose = $data['dpsLoose'];
-	$healLoose = $data['healLoose'];
+	$tankLoose = $data['tankLose'];
+	$dpsLoose = $data['dpsLose'];
+	$healLoose = $data['healLose'];
 	
 }
 
