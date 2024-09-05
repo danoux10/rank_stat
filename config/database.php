@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'RankStat';
 $username = 'root';
-$password = 'Danoux10&*';
+$password = 'Danoux10';
 //$password = 'password';
 
 try{
